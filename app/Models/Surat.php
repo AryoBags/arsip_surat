@@ -11,8 +11,9 @@ class Surat extends Model
     protected $table = 'surats';
     protected $fillable = ['nomor_surat','judul','kategori_surat_id','file'];
 
-    public function kategori_surat()
+
+    public function kategoriSurat()
     {
-        return $this->belongsTo(KategoriSurat::class,'kategori_surat_id');
+        return $this->belongsTo(KategoriSurat::class, 'kategori_surat_id');
     }
 }

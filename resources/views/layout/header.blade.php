@@ -1,8 +1,6 @@
 <header class="header">
-    <h1 class="title">Dashboard</h1>
+    <h1 class="title" style="font-weight: bold; font-size: 36px;">Arsip Surat Desa Karang Duren</h1>
+
     <!-- Judul sebagai ganti search -->
-    <div class="user-profile">
-      <img src="img/rekom.jpg" alt="User Avatar" />
-      <span style="color: #fff">Admin</span>
-    </div>
+
   </header>

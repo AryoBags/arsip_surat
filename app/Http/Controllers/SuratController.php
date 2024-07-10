@@ -15,19 +15,20 @@ class SuratController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request)
-    {
-        $query = Surat::query();
-        if($request->has('search')){
-            $search = $request -> input('search');
-            $query->where('nomor_surat', 'like', "%$search%")
-            ->orWhere('judul', 'like', "%$search%")
-            ->orWherehas('kategori_surat',function($q)use($search){
-                $q->where('nama_kategori', 'like', "%$search%");
-            });
-        }
-        $surat = $query->paginate(10);
-        return view('home',compact('surat'));
+{
+    $query = Surat::with('kategoriSurat'); // Eager loading relasi kategoriSurat
+    if($request->has('search')){
+        $search = $request -> input('search');
+        $query->where('nomor_surat', 'like', "%$search%")
+              ->orWhere('judul', 'like', "%$search%")
+              ->orWhereHas('kategoriSurat', function($q) use($search) {
+                  $q->where('nama_kategori', 'like', "%$search%");
+              });
     }
+    $surat = $query->paginate(10);
+    return view('home', compact('surat'));
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -60,11 +61,14 @@ class SuratController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        $surat = Surat::with('kategori_surat')->find($id);
-        return view('detail', compact('surat'));
-    }
+
+    public function show (string $id)
+{
+    $surat = Surat::with('kategoriSurat')->find($id);
+    return view('detail', compact('surat'));
+    // surat = Surat::with('kategori_surat')->find($id);
+    //     return view('detail', compact('surat'));
+}
 
     /**
      * Show the form for editing the specified resource.

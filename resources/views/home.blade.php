@@ -14,14 +14,14 @@
                 <span class="input-group-text">Cari Surat</span>
                 <input type="text" name="search" class="form-control rounded-start"
                     placeholder="Search..." aria-label="Search" aria-describedby="search-button"
-                    value="{{ request('search') }}">
+                    value="{{ request('search') }}" style="width: 600px; margin:0 10px 0 30px;">
                 <button class="btn btn-primary rounded-end" type="submit" id="search-button">Cari</button>
             </form>
           </div>
           <table class="data-table">
             <thead>
               <tr>
-                <th>Nama Surat</th>
+                <th>Nomor Surat</th>
                 <th>Kategori</th>
                 <th>Judul</th>
                 <th>Waktu Pengarsipan</th>
@@ -31,20 +31,24 @@
             <tbody>
                 @foreach ($surat as $s)
                 <tr>
-                  <td>{{ $s->id }}</td>
-                  <td>{{ $s->nomor_surat }}</td>
-                  <td>{{ $s->judul }}</td>
-                  <td>
-                    @if ($s->created_at == $s->updated_at)
-                        {{ $s->created_at }}
-                    @else
-                        {{ $s->updated_at }}
-                    @endif
-                  </td>
+                    <td>{{ $s->nomor_surat }}</td>
+                    <td>{{ $s->kategoriSurat->nama_kategori }}</td>
+                    <td>{{ $s->judul }}</td>
+                    <td>
+                        @if ($s->created_at == $s->updated_at)
+                            {{ $s->created_at }}
+                        @else
+                            {{ $s->updated_at }}
+                        @endif
+                    </td>
                   <td style="text-align: center">
-                      <a href="{{ route('Surat.show', $s->id) }}"class="edit-button">Detail</a>
-                        <button class="delete-button" data-toggle="modal" data-target="#deleteModal"
+
+                        <button style="color: #fbf6ee;" class="delete-button" data-toggle="modal" data-target="#deleteModal"
                       data-id="{{ $s->id }}">Delete</button>
+                      <a href="{{ asset('storage/' . $s->file) }}" class="btn" style="color: #fbf6ee; background-color:#FFB534;     font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px; padding: 10px 20px;" download>Unduh</a>
+                      <a href="{{ route('Surat.show', $s->id) }}"class="edit-button" style="color: #fbf6ee;">Lihat >></a>
                     </td>
                 </tr>
                 @endforeach
@@ -59,30 +63,30 @@
       </main>
     </div>
 
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
+            <div class="modal-content" style="border-radius: 10px; overflow: hidden; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                <div class="modal-header" style="background-color: #f8f9fa; border-bottom: 1px solid #dee2e6;">
                     <h5 class="modal-title" id="deleteModalLabel">Hapus Surat</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background: none; border: none; font-size: 1.5rem;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    Apakah Anda ingin hapus surat ini?
+                <div class="modal-body" style="padding: 20px; font-size: 16px;">
+                    Apakah Anda ingin menghapus surat ini?
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <div class="modal-footer" style="border-top: 1px solid #dee2e6;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #e623238f; color: white; border-radius: 20px; padding: 10px 20px; border: none;">Batal</button>
                     <form id="deleteForm" method="POST" action="">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Ya</button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #007bff; color: white; border-radius: 20px; padding: 10px 20px; border: none;">Ya</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -120,8 +124,6 @@
         });
     </script>
 </body>
-<footer class="footer">
-    <p>&copy; 2023 climtain</p>
-</footer>
+
 <script src="admin.js"></script>
 </html>

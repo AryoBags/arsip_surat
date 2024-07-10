@@ -34,7 +34,5 @@
     </div>
 
 </body>
-<footer class="footer">
-    <p>&copy; 2023 climtain</p>
-    </footer>
+
 </html>

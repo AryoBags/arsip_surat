@@ -9,15 +9,15 @@
                 <h2>About</h2>
                 <div class="about">
                     <div>
-                        <img class="pp" src="gambar/download.jpeg" alt="gambar">
+                        <img class="pp" src="assets/img/2041720232_Aryobagus.png" alt="gambar">
                     </div>
                     <div>
                         <ul class="about-des">
-                            <li><a href="#">aplikasi ini dibuat oleh : </a></li>
-                            <li><a href="#">Nama</a></li>
-                            <li><a href="#">prodi</a></li>
-                            <li><a href="#">NIM</a></li>
-                            <li><a href="#">Tanggal</a></li>
+                            <li><a href="#">Aplikasi ini dibuat oleh : </a> </li>
+                            <li><a href="#">Nama :</a> Aryo Bagus Kusumadewa Tutuko </li>
+                            <li><a href="#">Prodi :</a>D4 Teknik Informatika</li>
+                            <li><a href="#">NIM :</a> 2041720232</li>
+                            <li><a href="#">Tanggal :</a> 10 July 2024 </li>
                           </ul>
                     </div>
 
@@ -28,7 +28,5 @@
     </div>
 
 </body>
-<footer class="footer">
-    <p>&copy; 2023 climtain</p>
-    </footer>
+
 </html>

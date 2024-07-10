@@ -38,14 +38,12 @@
                     </div>
                     <div class="button-container">
                         <button type="submit" class="save-button">Submit</button>
-                        <a href="{{ route('Surat.show', $surat->id) }}" class="back-button">Kembali</a>
+                        <a href="{{ route('Surat.show', $surat->id) }}" class="back-button"><< Kembali</a>
                     </div>
                 </form>
             </section>
         </main>
     </div>
 </body>
-<footer class="footer">
-    <p>&copy; 2023 climtain</p>
-</footer>
+
 </html>

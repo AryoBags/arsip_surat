@@ -8,13 +8,13 @@
     font-family: 'Inter', sans-serif;
 }
 :root{
-    --color-sidebot:#2E2E20;
-    --color-back:#3E432E;
+    --color-sidebot:#65B741;
+    --color-back:#fbf6ee;
     --color-active:#A7D129;
     --color-add: #a7d129e9;
-    --color-content:#5a6141;
-    --color-input:#545b3e;
-    --font-color:#cbcbcb;
+    --color-content:#C1F2B0;
+    --color-input:##65B741;
+    --font-color:#000000;
     --button-light:#a7d129a0;
     --button-hover-li:#a7d12946;
     --button-save: #007bff;
@@ -38,6 +38,7 @@ h6,
     font-weight: 600;
 
 }
+
 
 body {
     font-family: Arial, sans-serif;
@@ -172,9 +173,9 @@ body {
 .sidebar {
     background-color: var(--color-sidebot);
     color: #fff;
-    max-width: 150px;
-    height: 100%; /* Ubah tinggi sidebar menjadi 100% */
-    position: fixed; /* Tambahkan posisi tetap untuk sidebar */
+    min-width: 145px;
+    height: 100%;
+    position: fixed;
 }
 
 .logo img {
@@ -412,7 +413,7 @@ body {
 .edit-button-about {
     border: 1px solid #daec99;
     color: var(--font-color);
-    background-color: var(--color-input);
+    background-color: var(--button-edit);
     border-radius: 5px;
     padding: 10px 20px;
     text-decoration: none;
@@ -472,8 +473,8 @@ body {
 
 .edit-button {
     border: 1px solid #daec99;
-    color: var(--font-color);
-    background-color: var(--color-input);
+    color: #fbf6ee;
+    background-color: var(--button-edit);
     border-radius: 5px;
     padding: 10px 20px;
     text-decoration: none;
@@ -488,7 +489,7 @@ body {
 .delete-button {
     border: 1px solid #daec99;
     color: var(--font-color);
-    background-color: var(--color-input);
+    background-color:  var(--danger);
     padding: 10px 20px;
     text-align: right;
     border-radius: 5px;
@@ -568,7 +569,7 @@ body {
     border: 1px solid #daec99;
     border-radius: 5px;
     margin-top: 10px;
-    background-color:var(--color-content);
+    background-color:#FBF6EE;
     font-size: 14px;
 }
 
@@ -638,7 +639,8 @@ body {
 .detail-surat a{
     text-decoration: none;
     font-size: 16px;
-    color: #f5f5f5;
+    color: #000000;
+    font-weight: bolder;
 }
 .about{
     display: flex;
@@ -658,7 +660,8 @@ body {
 .about-des a{
     text-decoration: none;
     font-size: 16px;
-    color: #f5f5f5;
+    color: #000000;
+    font-weight: bolder;
 }
 
 /* Untuk layar berukuran kecil (smartphone) */
