@@ -1,0 +1,664 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Inter&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+:root{
+    --color-sidebot:#2E2E20;
+    --color-back:#3E432E;
+    --color-active:#A7D129;
+    --color-add: #a7d129e9;
+    --color-content:#5a6141;
+    --color-input:#545b3e;
+    --font-color:#cbcbcb;
+    --button-light:#a7d129a0;
+    --button-hover-li:#a7d12946;
+    --button-save: #007bff;
+    --hov-save:#0056b3;
+    --button-edit: #007bff80;
+    --button-hov-edit:#0057b37a;
+    --danger:#e623238f;
+    --hov-danger:#e623235b;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-primary {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+        height: 100%; /* Pastikan tinggi elemen html dan body 100% */
+}
+
+/* Track Overview */
+.page-header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.row {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 100%;
+}
+@media (max-width: 768px) and (min-width: 676px) {
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .col-md-4
+    {
+        flex-basis: 50%;
+    }
+
+    .card-body {
+        margin-top: 20px;
+    }
+}
+@media (max-width: 675px)  {
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col-md-4
+    {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+
+}
+
+.img1{
+    max-width: 40px;
+    display: flex;
+    text-align: right;
+}
+.bi-person{
+    height: 20px;
+    width: 20px;
+}
+
+.col-md-4 {
+    padding: 0 15px;
+    width: 100%;
+
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+    max-width: 231px;
+    height: 133px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 20px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.card .h1 {
+    font-size: 36px;
+    font-weight: bold;
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.card .text-muted {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.89);
+}
+
+/* Optional: Ubah warna latar belakang card sesuai keinginan */
+.card:nth-child(1) {
+    background-color: var(--color-back);
+}
+
+.card:nth-child(2) {
+    background-color: #28a745;
+}
+
+.card:nth-child(3) {
+    background-color: #dc3545;
+}
+
+
+
+
+
+
+/* Dashboard */
+.dashboard {
+    display: flex;
+    background: var(--color-back);
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--color-sidebot);
+    color: #fff;
+    max-width: 150px;
+    height: 100%; /* Ubah tinggi sidebar menjadi 100% */
+    position: fixed; /* Tambahkan posisi tetap untuk sidebar */
+}
+
+.logo img {
+    width: 100px;
+    margin-top: 20px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 40px;
+}
+
+.menu{
+    text-decoration: none;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    padding: 15px;
+    list-style: none;
+    color: #fff;
+    display: block;
+    font-size: 30px;
+    transition: color 0.2s;
+}
+.menu a{
+    text-decoration: none;
+    color: #fff5f5;
+}
+.nav {
+    list-style: none;
+    padding: 23px;
+    margin: auto;
+}
+
+.nav li {
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+.nav ul{
+    height: 1500px;
+ }
+
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.nav a.active {
+    color: var(--color-active);
+}
+
+/* Content */
+/* Content */
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 150px;
+    background-color: var(--color-back);
+    max-width: 100%;
+    margin-bottom: 0px; /* Tambahkan margin bawah pada konten */
+    min-height: 100vh; /* Set tinggi minimum konten menjadi 100% dari tinggi viewport (viewport height) */
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 24px;
+    color: var(--font-color); /* Warna teks sesuaikan dengan kebutuhan */
+}
+
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Main Content */
+.main-content {
+    background-color:var(--color-content);
+    padding: 20px;
+    color: var(--font-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+ /* @media (max-width: 768px) {
+     .main-content {
+        width: %;
+    }
+}  */
+
+/* Gaya untuk kotak pencarian dan filter */
+.search-filter {
+    display: flex;
+    align-items: left;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk input pencarian */
+#searchInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #daec99;
+    color: #cbcbcb;
+    background-color: var(--color-content);
+    border-radius: 5px;
+    font-size: 14px;
+    max-width: 300px;
+}
+@media (max-width: 768px) {
+    #searchInput{
+        max-width: 200px;
+    }
+    .searchButton{
+        padding: 10px 0px;
+    }
+}
+
+#searchInput::placeholder {
+    color: #cbcbcbc5;
+}
+
+/* Gaya untuk tombol pencarian */
+#searchButton {
+    background: #a7d129a0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Gaya untuk dropdown filter */
+#filterDropdown {
+    padding: 10px;
+    border: 1px solid #daec99;
+    color: var(--font-color);
+    background-color: var(--color-input);
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+/*
+.pagination button {
+    background: #a7d129;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 5px;
+} */
+
+.page-numbers {
+    display: flex;
+    align-items: center;
+}
+
+.page-numbers button {
+    margin: 0 5px;
+    padding: 5px 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    background: var(--color-content);
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+.page-numbers button.active {
+    background: #a7d129;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Tambahkan gaya untuk tabel */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+}
+@media (max-width: 768px) {
+    .data-table {
+        width: 100%;
+    }
+}
+
+.data-table th,
+.data-table td {
+    padding: 10px;
+    text-align: left;
+    position: relative; /* Diperlukan untuk mengatur pseudo-element */
+}
+
+.data-table td::after {
+    content: "";
+    position: absolute;
+    font-size: 13px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #889361; /* Warna border horizontal */
+}
+.data-table th {
+    background-color: var(--color-back);
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+}
+.td-about{
+    max-width: 500px;
+}
+.edit-button-about {
+    border: 1px solid #daec99;
+    color: var(--font-color);
+    background-color: var(--color-input);
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: right;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
+
+}
+
+
+.edit-button:hover{
+    background-color: var(--button-edit);
+    border: 1px solid transparent;
+
+}
+
+@media (max-width: 900px) {
+    .td-about{
+        max-width: 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-wrap: nowrap;
+    }
+    .edit-button-about{
+        padding: 5px 5px;
+    }
+
+
+}
+
+
+/* Tombol CRUD */
+.button-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.add-button {
+    background-color: var(--color-add);
+    color: #fff5f5;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 1px;
+    text-decoration: none;
+}
+
+.add-button:hover {
+    background-color:var(--button-light);
+}
+
+.edit-button {
+    border: 1px solid #daec99;
+    color: var(--font-color);
+    background-color: var(--color-input);
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: right;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
+
+}
+.delete-button {
+    border: 1px solid #daec99;
+    color: var(--font-color);
+    background-color: var(--color-input);
+    padding: 10px 20px;
+    text-align: right;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.edit-button:hover{
+    background-color: var(--button-edit);
+    border: 1px solid transparent;
+
+}
+
+.delete-button:hover {
+    background-color:  var(--danger);
+    border: 1px solid transparent;
+}
+@media (max-width: 768px) {
+    .edit-button,
+    .delete-button{
+        padding: 7px 7px;
+    }
+}
+@media (max-width: 709px) {
+    .edit-button,
+    .delete-button{
+        padding: 5px 5px;
+    }
+}
+/*--------------------------------------------------------------
+# Create
+--------------------------------------------------------------*/
+/* CSS untuk tampilan form */
+.main-content-create {
+    background-color:var(--color-content);
+    padding: 20px;
+    color: var(--font-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content-create h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--font-color);
+}
+
+.main-content-create .data-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content-create .form-group {
+    margin-bottom: 20px;
+}
+
+.main-content-create label {
+    font-weight: bold;
+    color: var(--font-color);
+    margin-bottom: 5px;
+    font-size: 14px;
+
+}
+.main-content-create select{
+    border-color: #2E2E20;
+}
+
+.main-content-create input[type="text"],
+.main-content-create select,
+.main-content-create textarea,
+.main-content-create input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    color: var(--font-color);
+    border: 1px solid #daec99;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color:var(--color-content);
+    font-size: 14px;
+}
+
+.main-content-create select {
+    height: 40px;
+}
+
+.main-content-create .button-container {
+    text-align: right;
+}
+
+.main-content-create .save-button {
+    background-color:var(--button-save);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.main-content-create .save-button:hover {
+    background-color: var(--hov-save);
+}
+.back-button {
+    background: var(--button-light);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 10px;
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+}
+
+.back-button:hover {
+    background-color:var(--button-hover-li);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: var(--color-sidebot);
+    color: #fff;
+    padding: 10px 0;
+    min-width: 100%;
+    /* margin-left: 150px; */
+}
+/* @media (max-width: 813px) {
+    .footer {
+     margin-left: 60px;
+    }
+} */
+
+.detail-surat{
+    width: 100%;
+    height: auto;
+}
+.detail-surat li{
+    list-style: none;
+    padding: 10px;
+
+}
+.detail-surat a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #f5f5f5;
+}
+.about{
+    display: flex;
+    gap: 100px;
+
+}
+.pp{
+    max-width: 500px;
+    background-color: #0056b3;
+    height: auto;
+
+}
+.about-des li{
+    list-style: none;
+    padding: 10px;
+}
+.about-des a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #f5f5f5;
+}
+
+/* Untuk layar berukuran kecil (smartphone) */
